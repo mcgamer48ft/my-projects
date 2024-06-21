@@ -3,7 +3,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if (!container) return; // Exit if the container element is not found
 
   const stars = [];
-  const maxStars = 100; // Reduced the number of stars for better performance
+  const maxStars = 500; // Reduced the number of stars for better performance
 
   // Create stars
   for (let i = 0; i < maxStars; i++) {
