@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Chico</title>
+    <title>Project kms</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body, h1, h2, p {
             margin: 0;
@@ -14,64 +14,136 @@
         }
 
         body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: #1a1a1a;
+            font-family: 'Poppins', sans-serif;
+            background: #1a1a1a;
             color: #fff;
-            line-height: 1.6;
-        }
-
-        .star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background-color: #fff;
-            border-radius: 50%;
-            pointer-events: none;
+            line-height: 1.8;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 80px 20px;
             text-align: center;
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            animation: fadeIn 1s ease, floatAnimation 3s ease-in-out infinite;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes floatAnimation {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
         }
 
         h1 {
             font-size: 48px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            animation: glowAnimation 2s ease-in-out infinite;
+        }
+
+        @keyframes glowAnimation {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 0.6);
+            }
         }
 
         h2 {
             font-size: 24px;
-            margin-bottom: 40px;
+            margin-bottom: 50px;
             color: #ccc;
+            animation: fadeInAnimation 1s ease;
+        }
+
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .btn {
             display: inline-block;
-            background-color: #ff6600;
+            background: linear-gradient(to right, #ff6600, #ff9900);
             color: #fff;
             text-decoration: none;
-            padding: 15px 30px;
+            padding: 20px 40px;
             border-radius: 30px;
-            font-size: 18px;
-            font-weight: 700;
+            font-size: 20px;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            -webkit-transition: background-color 0.3s ease, -webkit-transform 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            animation: pulseAnimation 2s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes pulseAnimation {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
         }
 
         .btn:hover {
-            background-color: #cc5200;
-            transform: scale(1.1);
-            -webkit-transform: scale(1.1);
+            background: linear-gradient(to left, #ff6600, #ff9900);
+            box-shadow: 0 0 40px rgba(255, 165, 0, 0.6);
         }
 
-        /* Add media queries for responsive design */
+        .btn:hover::before {
+            content: "";
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: linear-gradient(45deg, #ff6600, #ff9900, #ff6600, #ff9900);
+            z-index: -1;
+            border-radius: 35px;
+            animation: glowAnimation 2s ease-in-out infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes glowAnimation {
+            0%, 100% {
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        /* what am i doing */
         @media (max-width: 768px) {
             h1 {
                 font-size: 36px;
@@ -80,15 +152,19 @@
             h2 {
                 font-size: 20px;
             }
+
+            .btn {
+                font-size: 18px;
+                padding: 15px 30px;
+            }
         }
     </style>
 </head>
 <body>
     <main class="container">
-        <h1>Project Chico</h1>
-        <h2>Latest Build: a-0.1</h2>
+        <h1>Project i wanna kms</h1>
+        <h2>Latest mental unstability: 10:17</h2>
         <a href="https://github.com/mcgamer48ft/my-projects" class="btn" target="_blank">View on GitHub</a>
     </main>
-    <script src="script.js" defer></script>
 </body>
 </html>
